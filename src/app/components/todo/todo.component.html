@@ -1,0 +1,51 @@
+<input [attr.id]="'check'+id"
+       type="checkbox"
+       [(ngModel)]="checked"
+       (ngModelChange)="updateStatus()"
+       hidden="hidden">
+<label
+  [attr.for]="'check'+id"
+  class="mt-3 relative cursor-pointer flex flex-wrap items-center cursor-pointer bg-white md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+  <div class="w-1/12 flex items-center mb-4">
+    <input type="checkbox"
+           [(ngModel)]="checked"
+           class="border w-5 h-5 m-auto text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+  </div>
+  <div class="flex justify-end absolute right-2 top-2">
+
+    <app-button-component
+      (click)="sendUpdateTask()"
+      [class_button]="'inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-2 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5'"
+      [type_button]="'button'"
+      [icon]="'edit'">
+    </app-button-component>
+    <app-button-component
+      (click)="sendRemoveTask()"
+      [class_button]="'inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-2 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5'"
+      [type_button]="'button'"
+      [icon]="'delete'">
+    </app-button-component>
+  </div>
+  <div class="w-11/12 flex flex-col justify-between p-4 leading-normal">
+    <span
+      class="w-20 text-center block items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10"
+      *ngIf="status === 'PENDING';">
+      PENDING
+    </span>
+    <span
+      class="w-20  text-center block items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
+      *ngIf="status === 'REMOVE';">
+      REMOVE
+    </span>
+    <span
+      class="w-20 text-center block items-center rounded-md bg-purple-100 px-2 py-1 text-xs font-medium text-purple-600 ring-1 ring-inset ring-purple-600"
+      *ngIf="status === 'DONE';">
+      DONE!
+    </span>
+    <strong class="mb-1 mt-2 font-bold tracking-tight text-gray-900 dark:text-white">
+      {{title}}
+    </strong>
+    <span class="mb-2 font-normal text-gray-700 dark:text-gray-400">{{ description }}</span>
+    <span class="mb-2 font-normal text-gray-500 dark:text-gray-400">{{ date }}</span>
+  </div>
+</label>

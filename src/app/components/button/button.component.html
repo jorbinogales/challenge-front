@@ -1,0 +1,9 @@
+<button type="{{ type_button }}"
+        [class]="class_button + (disable ? 'rounded opacity-50 cursor-not-allowed' : '')"
+        [disabled]="disable">
+  <span *ngIf="text_button">
+      {{ text_button }}
+  </span>
+
+  <img *ngIf="icon" [attr.src]="'./assets/svg/'+icon+'.svg'" alt="image">
+</button>
