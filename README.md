@@ -9,8 +9,42 @@ Siéntete libre de clonar este repositorio y utilizarlo como base para el desarr
 De igual manera puedes documentar dentro de este archivo todo lo que deseas contar sobre tu desarrollo, como por ejemplo, decisiones de diseño, problemas encontrados, etc.
 
 ## Comentarios sobre el desarrollo
-...
 
+
+### Tipo de Diseño modular centrado en componentes
+
+- La carpeta components posee todos los componentes utilizados en la aplicación de forma encapsulada. Cada componente representa una parte de la interfaz de usuario y encapsula su funcionalidad y estilo.
+
+
+- La carpeta app contiene subcarpetas que representan diferentes módulos de la aplicación, como components, interceptors, interfaces, layout, modules, y router. Esta modularidad facilita la organización y el mantenimiento del código al separar las diferentes funcionalidades en módulos más pequeños y manejables.
+
+
+- La estructura de carpetas  esta organizada de manera intuitiva, lo que facilita la navegación y la comprensión del código para los desarrolladores. Cada carpeta tiene un propósito claro y está destinada a contener archivos relacionados.
+
+### Estructura de Carpetas
+
+```
+.
+├── src
+│   ├── app
+│   │   ├── components
+│   │   ├── interceptors
+│   │   ├── interfaces
+│   │   ├── layout
+│   │   ├── modules
+│   │   └── router
+│   ├── assets
+│   ├── environments
+│   └── app-routing.module.ts
+├── angular.json
+├── .editorconfig
+├── .gitignore
+├── package.json
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+└── tsconfig.spec.json
+```
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
