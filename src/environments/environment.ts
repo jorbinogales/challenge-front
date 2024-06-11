@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    API: "https://pulp-back-dev.cmpc-innovation.com",
+    API: "https://challenge-backend-hi6c.onrender.com",
 };
