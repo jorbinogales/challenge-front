@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    API: "http://localhost:4000",
+    API: "https://pulp-back-dev.cmpc-innovation.com",
 };
